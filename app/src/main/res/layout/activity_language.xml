@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/picha"
+    tools:context=".LanguageActivity">
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiogroup"
+        android:layout_gravity="center">
+        <RadioButton
+            android:id="@+id/english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:textStyle="bold"
+            android:textColor="@color/teal_200"
+            android:onClick="checkButton"/>
+
+
+        <RadioButton
+            android:id="@+id/kiswahili"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kiswahili"
+            android:textColor="@color/teal_200"
+            android:textStyle="bold"
+            android:onClick="checkButton"/>
+
+        <RadioButton
+            android:id="@+id/spanish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spanish"
+            android:textStyle="bold"
+            android:textColor="@color/teal_200"
+            android:onClick="checkButton"/>
+        <RadioButton
+            android:id="@+id/swedish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Swedish"
+            android:textStyle="bold"
+            android:textColor="@color/teal_200"
+            android:onClick="checkButton"
+            android:checked="true"
+            android:paddingBottom="20dp"
+            android:layout_marginTop="20dp"/>
+
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_view_selected"
+        android:layout_gravity="center"
+        android:text="Your selection:"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:padding="20dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_apply"
+        android:layout_below="@+id/text_view_selected"
+        android:text="Apply"
+        android:layout_marginTop="37dp"
+        android:layout_gravity="center">
+
+    </Button>
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        app:showAsAction=""
+
+        android:title="SERVICES ">
+        <menu>
+            <item
+                android:icon="@drawable/ic_baseline_place_24"
+                android:id="@+id/place"
+                android:title="Place"
+                app:showAsAction="never"/>
+            <item
+                android:icon="@drawable/ic_baseline_person_24"
+                android:id="@+id/tour"
+                android:title="TourGuide"
+                app:showAsAction="never"/>
+            <item
+                android:icon="@drawable/ic_baseline_language_24"
+                android:id="@+id/lng"
+                android:title="languages"
+                app:showAsAction="never"/>
+            <item
+                android:icon="@drawable/ic_baseline_payments_24"
+                android:id="@+id/payment"
+                android:title="payment"
+
+                app:showAsAction="never"/>
+            <item
+                android:icon="@drawable/ic_baseline_verified_user_24"
+                android:id="@+id/comf"
+                android:title="comfirmation"
+                app:showAsAction="never"/>
+            <item
+                android:icon="@drawable/ic_baseline_exit_to_app_24"
+                android:id="@+id/logout"
+                android:title="logout"
+                app:showAsAction="never"/>
+        </menu>
+    </item>
+
+
+</menu>

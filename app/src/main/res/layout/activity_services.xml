@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/zebra"
+    android:orientation="vertical"
+    tools:context=".ServicesActivity">
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiogroup"
+        android:layout_gravity="center">
+        <RadioButton
+            android:id="@+id/paje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="paje beach"
+            android:textStyle="bold"
+            android:textColor="@color/teal_200"
+            android:onClick="checkButton"/>
+
+
+        <RadioButton
+            android:id="@+id/jambian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jambian beach"
+            android:textColor="@color/teal_200"
+            android:textStyle="bold"
+            android:onClick="checkButton"/>
+
+        <RadioButton
+            android:id="@+id/people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="people palace"
+            android:textStyle="bold"
+            android:textColor="@color/teal_200"
+            android:onClick="checkButton"/>
+        <RadioButton
+            android:id="@+id/jozan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jozan forest"
+            android:textStyle="bold"
+            android:textColor="@color/teal_200"
+            android:onClick="checkButton"
+            android:checked="true"
+            android:paddingBottom="20dp"
+            android:layout_marginTop="20dp"/>
+        <RadioButton
+            android:id="@+id/museum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="museum"
+            android:textStyle="bold"
+            android:textColor="@color/teal_200"
+            android:onClick="checkButton"
+            android:checked="true"
+            android:paddingBottom="20dp"
+            android:layout_marginTop="20dp"/>
+        <RadioButton
+            android:id="@+id/mnamba"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mnemba island"
+            android:textStyle="bold"
+            android:textColor="@color/teal_200"
+            android:onClick="checkButton"
+            android:checked="true"
+            android:paddingBottom="20dp"
+            android:layout_marginTop="20dp"/>
+
+
+
+
+
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_view_selected"
+        android:layout_gravity="center"
+        android:text="Your selection:"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:padding="20dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_apply"
+        android:layout_below="@+id/text_view_selected"
+        android:text="Apply"
+        android:layout_marginTop="37dp"
+        android:layout_gravity="center"/>
+
+
+
+</LinearLayout>
