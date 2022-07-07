@@ -7,71 +7,49 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class SecondActivity extends AppCompatActivity {
+    EditText username , password;
+    Button btnlogin;
+    dbmanager DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+        username = (EditText) findViewById(R.id.username1);
+        password = (EditText) findViewById(R.id.password1);
+        Button btnlogin = (Button) findViewById(R.id.btnsignup1);
+        DB= new dbmanager(this);
+        btnlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String user = username.getText().toString();
+                String pass = password.getText().toString();
+                if (user.equals("")|| pass.equals(""))
+                    Toast.makeText(SecondActivity.this, "please enter all the fields", Toast.LENGTH_SHORT).show();
+                else {
+                    Boolean checkuserpass= DB.checkusernamepassword(user,pass);
+                    if (checkuserpass==true){
+                        Toast.makeText(SecondActivity.this, "sign in successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(),ComfirmationActivity.class);
+                        startActivity(intent);
+                    }else {
+                        Toast.makeText(SecondActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+        });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_item,menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int item_id=item.getItemId();
-        if (item_id == R.id.place) {
-            Intent intent = new Intent(SecondActivity.this , ServicesActivity.class);
-            startActivity(intent);
-            Toast.makeText(this, "This is place option item", Toast.LENGTH_SHORT).show();
-
-        }
-        else if (item_id==R.id.tour){
-            Intent intent = new Intent(SecondActivity.this , TourActivity.class);
-            startActivity(intent);
-            Toast.makeText(this, "This is TourGuide option item", Toast.LENGTH_SHORT).show();
-
-        }
-        else if (item_id==R.id.lng){
-            Intent intent = new Intent(SecondActivity.this , LanguageActivity.class);
-            startActivity(intent);
-            Toast.makeText(this, "This is language option item", Toast.LENGTH_SHORT).show();
-
-        }
-        else if (item_id==R.id.payment){
-            Intent intent = new Intent(SecondActivity.this ,PaymentActivity.class);
-            startActivity(intent);
-            Toast.makeText(this, "This is payment option item", Toast.LENGTH_SHORT).show();
-
-        }
-        else if (item_id==R.id.comf){
-            Intent intent = new Intent(SecondActivity.this , ComfirmationActivity.class);
-            startActivity(intent);
-
-            Toast.makeText(this, "This is confirmation option item", Toast.LENGTH_SHORT).show();
-
-        }
-        else if (item_id==R.id.logout){
-            Intent intent = new Intent(SecondActivity.this , LogoutActivity.class);
-            startActivity(intent);
-            Toast.makeText(this, "This is logout option item", Toast.LENGTH_SHORT).show();
-
-        }
-        return true;
 
 
 
 
 
-
-
-
-
-    }
 }
